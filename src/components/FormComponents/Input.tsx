@@ -1,8 +1,13 @@
+import { ChangeEvent } from "react";
+
 interface InputProps {
   labelName: string;
   htmlFor: string;
   placeholder?: string;
   type: string;
+  value: string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  name?: string;
 }
 
 export default function InputBasic(props: InputProps) {
@@ -13,6 +18,9 @@ export default function InputBasic(props: InputProps) {
         className="rounded-md bg-input-bg py-2 px-2 w-full"
         type={props.type}
         placeholder={props.placeholder}
+        value={props.value}
+        onChange={props.onChange}
+        name={props.name}
       />
     </div>
   );
